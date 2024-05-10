@@ -1,0 +1,55 @@
+body{
+  background-color: #00000012;
+  font-family: 'Neutra Text Alt', sans-serif !important;
+}
+.sidebar {
+  width: 250px;
+  background-color: white;
+  padding-top: 5px;
+  box-shadow: 1px 0px 5px #00000012;
+  height:100vh;
+  overflow: none;
+  z-index: 11;
+}
+
+.menu {
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  max-height: 0; /* Initially collapsed */
+}
+
+
+::-webkit-scrollbar {
+  width: 7px; /* Width of the vertical scrollbar */
+  height:7px; /* Height of the horizontal scrollbar */
+}
+
+/* Customizes the track (or background) of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Color of the track */
+}
+
+/* Customizes the handle of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #a7a7a7; /* Color of the thumb */
+  border-radius: 6px; /* Optional: Roundness of the scrollbar thumb */
+}
+
+.element {
+  position: relative;
+  z-index: 1;
+  /* Other styling for the element */
+}
+
+.element::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 250px; /* Start the shadow effect 250px from the top */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+  /* Adjust the gradient to simulate the shadow fading in */
+  pointer-events: none; /* Ensures clicks pass through this pseudo-element */
+}
